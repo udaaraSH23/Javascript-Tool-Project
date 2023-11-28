@@ -1,0 +1,39 @@
+/*resets*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: auto;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.palindrome{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.Cipher{
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.Numaral{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.Validator{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
