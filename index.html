@@ -5,22 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToolBox</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=BioRhyme">
 </head>
 <body>
-    <div id="mainContainer" class="main">
-        <H1>Check My Tools</H1>
+    <!--Showing Information of the Tools-->
+    <div id="palCard" class="card">
+        <h2 id="cardHead">Palindrome Checker</h2>
+        <p id="crdDetail">Palindrome is word or sentence which ryme forward and backward equally.
+            </br>ex:eye
+        </p>
     </div>
-    <div id="palindrome container" class="palindrome">
-        <p>Palindrome Checker</p>
+
+
+    <!--Palidrome Checker-->
+    <div id="palindrome-container" class="tabs">
+        
+        <p class="titleTabs">Palindrome Checker</p>
+        <div id="containerPanel" class="panel">
+            <button id="btn1" class="btnclose">X</button>
+            
+            <p>Enter Your Text</p>
+            <input type="text" id="palInput">
+            <button class="btn" id="checkPal">Check</button>
+            <h3 id="resultPal"></h3>
+        </div>   
     </div>
-    <div id="cipherContainer" class="Cipher">
-        <p>Ciser Cipher</p>
+    <!--Cipher-->
+    <div id="cipherContainer" class="tabs">
+        
+        <p class="titleTabs">Ciser Cipher</p>
+        <div id="containerPanel2" class="panel">
+            <button class="btnclose">X</button>    
+            <nav>
+                <ul>
+                    <li id="encClk">Encrypt</li>
+                    <li id="decClk">decrypt</li>
+                </ul>
+                
+            </nav>
+            <div id="encript">
+            <p>This can Encrpt a message</p>
+            <p>Enter your message</p>
+            <input type="text" id="encMsg">
+            <p>Enter Key</p>
+            <input type="number" id="keyMsg">
+            <button id="bEnc">Encrypt</button>
+            <p id="encpted">dgdgdgd</p>
+        </div>
+        <div id="decript">
+            <p>Decrypt a message</p>
+            <label>Enter your message</label>
+            <input type="text" id="dcrptMsg">
+            <p>Enter Key</p>
+            <input type="text" id="dcptKy">
+            <button id="dcrptBtn">Decrypt</button>
+            <p id="decrypted">hjfjfjfj</p>
+        </div>
+
+        </div>
     </div>
-    <div id="romanContainer" class="Numaral">
-        <p>Numaral To Roman Numbers</p>
+    <!-- Roman NUmber container-->
+    <div id="romanContainer" class="tabs">
+        
+        <p class="titleTabs">Numaral To Roman Numbers</p>
+
+        <div id="containerPanel3" class="panel">
+            <button class="btnclose">X</button>
+            <p>Enter number</p>
+            <input type="number" id="numaral">
+            <button id="numConvert">Convet</button>
+            <p id="cnvrted">Converte: </p>
+
+        </div>
     </div>
-    <div id="validatorContainer" class="Validator">
-        <p>Phone number Validator</p>
+    <div id="validatorContainer" class="tabs">
+        
+        <p class="titleTabs">Phone number Validator</p>
+        <div id="containerPanel4" class="panel">
+            <button class="btnclose">X</button>
+            <p>Enter Valid hone Number</p>
+            <input type="text" id="phoneNo">
+            <button id="valid">Validate</button>
+            <p id="validStatus">valid phone Number</p>
+        </div>
     </div>
+    
+    </div>
+    <script src="script.js" type="module"></script>
 </body>
 </html>

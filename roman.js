@@ -17,13 +17,13 @@ function convertToRoman(num) {
 
   let final = "";
 //iterate throgh all keys in roman map
-  for (sym in roman) {
+  for (let sym in roman) {
     while (roman[sym] <= num) {
       final = final + sym;
       num = num-roman[sym];
     }
   }
-
   return final;
 }
-convertToRoman(36);
+
+export default convertToRoman;

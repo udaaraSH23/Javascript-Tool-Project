@@ -8,7 +8,13 @@ function telephoneCheck(str){
 //Combining All in to one Regex
   const combine = new RegExp(`^${cntryReg.source}?(${regstart.source})${regend.source}$`);
 
-  return combine.test(str)
+  const validity =  combine.test(str)
+  if(validity){
+    return "Valid Phone Number"
+  }
+  else{
+    return "Not valid Phone NUmber"
+  }
 }
 
-telephoneCheck("444 444 4444");
+export default telephoneCheck;

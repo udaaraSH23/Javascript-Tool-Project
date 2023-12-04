@@ -9,11 +9,11 @@ function palindrome(str) {
   let final = original.split("").reverse().join("");
 
   if (original == final) {
-    console.log(final,original);
+    return "Palindrome"
   }
   else{
-    console.log("Not a Palindrome")
+    return "Not a Palindrome"
   }
 }
 
-palindrome("1 eye for of 1 eye.");
+export default palindrome;
