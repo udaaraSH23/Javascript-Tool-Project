@@ -1,4 +1,7 @@
 function Cipher(str,keyMsg) {
+  if(keyMsg>26 || keyMsg<0){
+    return "Enter Number 0 to 26 only"
+  }
   let sen = str.toUpperCase();
   
   let encrypt = "";
