@@ -14,7 +14,9 @@ function convertToRoman(num) {
     IV: 4,
     I: 1,
   };
-
+  if(num>3999){
+    return "Roman Numbers Only go t0 3999 "
+  }
   let final = "";
 //iterate throgh all keys in roman map
   for (let sym in roman) {

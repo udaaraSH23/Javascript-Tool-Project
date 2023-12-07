@@ -11,6 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #ff5e00;
 }
 
 .tabs {
@@ -30,10 +31,12 @@ body {
 }
 .tabs .titleTabs {
   margin: 1rem auto;
+  top: 0;
 }
 
 #cipherContainer {
-  border-radius: 0 0 3rem 0;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 29% 63% 61% 24%/41% 25% 25% 25%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(12, 184, 12, 0.849);
   color: white;
@@ -42,15 +45,17 @@ body {
 }
 
 #palindrome-container {
-  border-radius: 0 0 0 3rem;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 29% 63% 61% 24%/41% 25% 25% 25%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgba(255, 0, 255, 0.849);
+  background-color: rgb(255, 0, 255);
   top: 0;
   right: 0;
 }
 
 #romanContainer {
-  border-radius: 0 3rem 0 0;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 29% 63% 61% 24%/41% 25% 25% 25%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(236, 236, 10, 0.897);
   bottom: 0;
@@ -60,7 +65,8 @@ body {
 }
 
 #validatorContainer {
-  border-radius: 3rem 0 0 0;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 29% 63% 61% 24%/41% 25% 25% 25%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(16, 16, 212, 0.87);
   bottom: 0;
@@ -70,13 +76,15 @@ body {
 }
 
 .btnclose {
+  font-weight: 800;
   position: absolute;
   top: 0;
   right: 0;
   padding: 0.5rem;
   border: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .card {
@@ -89,11 +97,11 @@ body {
   text-align: center;
   opacity: 1;
   transition: opacity 1s ease;
-  border: 5px rgb(158, 42, 27) solid;
+  border: 5px rgb(255, 255, 255) solid;
   border-radius: 20px;
 }
 .card h2 {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-family: sans-serif, "Times New Roman", Times, serif;
 }
 .card p {
@@ -107,19 +115,25 @@ body {
 
 .panel {
   position: relative;
-  width: 60vw;
-  height: 80vh;
+  max-height: 520px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  border: 2px rgb(255, 255, 255) solid;
-  color: white;
-  border-radius: 12px;
-  background-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+}
+
+.fullScreen {
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  cursor: default;
 }
 
 #containerPanel {
   display: none;
-  min-width: 460px;
+  width: 80%;
   max-height: 520px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 2px;
 }
 #containerPanel h3 {
   margin: 2rem auto;
@@ -134,62 +148,100 @@ body {
   border: none;
   outline: none;
   display: block;
+  background-color: rgba(255, 252, 252, 0.863);
+  transition: all 0.5s;
+}
+#containerPanel input:focus {
+  background-color: rgba(255, 252, 252, 0.541);
 }
 #containerPanel .btn {
   padding: 1rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: white;
-  background-color: black;
-  border: 0.3rem solid white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(206, 203, 203);
+  border: none;
+  border-radius: 5px;
 }
 #containerPanel .btn:hover {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  border: 0.3rem solid rgb(0, 0, 0);
+  color: rgb(250, 250, 250);
+  background-color: rgb(0, 0, 0);
+  border: 0.2rem solid rgb(0, 0, 0);
 }
 
 #containerPanel2 {
   display: none;
-  position: relative;
-  min-width: 460px;
+  width: 80%;
   max-height: 520px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 2px;
+  color: white;
+  transition: all 0.3s;
 }
-#containerPanel2 nav ul {
-  position: absolute;
-  top: 0;
-  left: 0;
+#containerPanel2 #navi ul {
   list-style: none;
   width: 100%;
   cursor: pointer;
 }
-#containerPanel2 nav ul li {
-  background-color: rgb(17, 0, 255);
-  padding: 1rem;
+#containerPanel2 #navi ul li {
+  background-color: rgb(0, 0, 0);
+  padding: 0.5rem;
   float: left;
   width: 50%;
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: all 0.5s;
 }
-#containerPanel2 nav li:hover {
-  background-color: brown;
+#containerPanel2 #navi li:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 #containerPanel2 #encript {
-  position: absolute;
-  top: 3rem;
-  left: 0;
-  margin-top: 2rem;
+  margin-top: 3rem;
   text-align: left;
 }
 #containerPanel2 #encript button {
   margin: 1rem;
+  padding: 1rem;
+  display: block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(206, 203, 203);
+  border: none;
+  border-radius: 5px;
+}
+#containerPanel2 #encript button:hover {
+  color: rgb(250, 250, 250);
+  background-color: rgb(0, 0, 0);
+  border: 0.2rem solid rgb(0, 0, 0);
 }
 #containerPanel2 #decript {
-  position: absolute;
-  top: 6rem;
-  left: 0;
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: none;
+  text-align: left;
+}
+#containerPanel2 #decript button {
+  margin: 1rem;
+  padding: 1rem;
+  display: block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(206, 203, 203);
+  border: none;
+  border-radius: 5px;
+}
+#containerPanel2 #decript button:hover {
+  color: rgb(250, 250, 250);
+  background-color: rgb(0, 0, 0);
+  border: 0.2rem solid rgb(0, 0, 0);
 }
 #containerPanel2 p {
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
 }
 #containerPanel2 label {
   margin: 1rem;
@@ -198,23 +250,26 @@ body {
   width: 100%;
   height: 1rem;
   margin: 1rem 0 0 1rem;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  display: block;
+  background-color: rgba(255, 252, 252, 0.863);
+  transition: all 0.5s;
+}
+#containerPanel2 input:focus {
+  background-color: rgba(255, 252, 252, 0.541);
 }
 #containerPanel2 button {
   z-index: 2;
 }
 
-.fullScreen {
-  width: 100%;
-  height: 100vh;
-  z-index: 2;
-  backdrop-filter: blur(5px);
-  cursor: default;
-}
-
 #containerPanel3 {
   display: none;
-  min-width: 460px;
+  width: 80%;
   max-height: 520px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 2px;
 }
 #containerPanel3 h3 {
   padding: 30px 0;
@@ -229,21 +284,44 @@ body {
   height: 2rem;
   outline: none;
   margin: 2rem 0 0 2rem;
+  border: none;
+  outline: none;
   display: block;
+  background-color: rgba(255, 252, 252, 0.863);
+  transition: all 0.5s;
 }
-#containerPanel3 button {
+#containerPanel3 input:focus {
+  background-color: rgba(255, 252, 252, 0.541);
+}
+#containerPanel3 #numConvert {
+  border: none;
   margin: 2rem 0 0 2rem;
   padding: 1rem;
   display: block;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(206, 203, 203);
+  border: none;
+  border-radius: 5px;
+}
+#containerPanel3 #numConvert:hover {
+  color: rgb(250, 250, 250);
+  background-color: rgb(0, 0, 0);
+  border: 0.2rem solid rgb(0, 0, 0);
 }
 #containerPanel3 #cnvrt {
   margin: 2rem;
 }
 
 #containerPanel4 {
+  color: white;
   display: none;
-  min-width: 460px;
+  width: 80%;
   max-height: 520px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 2px;
 }
 #containerPanel4 p {
   margin: 2rem;
@@ -252,12 +330,61 @@ body {
   display: block;
   padding: 1rem;
   margin: 1rem auto;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(206, 203, 203);
+  border: none;
+  border-radius: 5px;
+}
+#containerPanel4 #valid:hover {
+  color: rgb(250, 250, 250);
+  background-color: rgb(0, 0, 0);
+  border: 0.2rem solid rgb(0, 0, 0);
 }
 #containerPanel4 input {
+  border: none;
+  outline: none;
   display: block;
+  background-color: rgba(255, 252, 252, 0.863);
+  transition: all 0.5s;
   margin: 0 auto;
   height: 2rem;
   width: 80%;
+}
+#containerPanel4 input:focus {
+  background-color: rgba(255, 252, 252, 0.541);
+}
+
+.info {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: medium;
+  color: rgb(0, 0, 0);
+}
+
+.custom-shape-divider-bottom-1701706101 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+.custom-shape-divider-bottom-1701706101 svg {
+  position: relative;
+  display: block;
+  width: calc(140% + 1.3px);
+  height: 346px;
+}
+
+.custom-shape-divider-bottom-1701706101 .shape-fill {
+  fill: #ffffff;
 }
 
 /*# sourceMappingURL=styles.css.map */

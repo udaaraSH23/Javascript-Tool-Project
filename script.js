@@ -18,11 +18,14 @@ const card = document.getElementById("palCard");
 const closeBtn = document.querySelectorAll('.btnclose')
 const panels = document.querySelectorAll('.panel');
 
+const title = document.querySelectorAll('.titleTabs')
+
 closeBtn.forEach((btn,index) => {
   btn.addEventListener('click', (event) => {
     event.stopPropagation();
     tabs[index].classList.remove('fullScreen');
     panels[index].style.display ="none"
+    title[index].style.fontSize = "20px"
     
   });
 });
@@ -31,6 +34,7 @@ tabs.forEach((each,index) => {
   each.addEventListener("click", () => {
     each.classList.add("fullScreen");
     panels[index].style.display ="block"
+    title[index].style.fontSize = "0"
   });
 });
 
